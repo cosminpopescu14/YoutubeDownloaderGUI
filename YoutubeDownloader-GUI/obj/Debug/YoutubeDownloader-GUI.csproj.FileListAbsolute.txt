@@ -1,0 +1,15 @@
+C:\Users\cosmi\Documents\Visual Studio 2017\Projects\YoutubeDownloader-GUI\YoutubeDownloader-GUI\bin\Debug\YoutubeDownloader-GUI.exe.config
+C:\Users\cosmi\Documents\Visual Studio 2017\Projects\YoutubeDownloader-GUI\YoutubeDownloader-GUI\bin\Debug\YoutubeDownloader-GUI.exe
+C:\Users\cosmi\Documents\Visual Studio 2017\Projects\YoutubeDownloader-GUI\YoutubeDownloader-GUI\bin\Debug\YoutubeDownloader-GUI.pdb
+C:\Users\cosmi\Documents\Visual Studio 2017\Projects\YoutubeDownloader-GUI\YoutubeDownloader-GUI\bin\Debug\MediaToolkit.dll
+C:\Users\cosmi\Documents\Visual Studio 2017\Projects\YoutubeDownloader-GUI\YoutubeDownloader-GUI\bin\Debug\Newtonsoft.Json.dll
+C:\Users\cosmi\Documents\Visual Studio 2017\Projects\YoutubeDownloader-GUI\YoutubeDownloader-GUI\bin\Debug\YoutubeExtractor.dll
+C:\Users\cosmi\Documents\Visual Studio 2017\Projects\YoutubeDownloader-GUI\YoutubeDownloader-GUI\bin\Debug\Newtonsoft.Json.xml
+C:\Users\cosmi\Documents\Visual Studio 2017\Projects\YoutubeDownloader-GUI\YoutubeDownloader-GUI\bin\Debug\YoutubeExtractor.pdb
+C:\Users\cosmi\Documents\Visual Studio 2017\Projects\YoutubeDownloader-GUI\YoutubeDownloader-GUI\bin\Debug\YoutubeExtractor.xml
+C:\Users\cosmi\Documents\Visual Studio 2017\Projects\YoutubeDownloader-GUI\YoutubeDownloader-GUI\obj\Debug\YoutubeDownloader_GUI.Form1.resources
+C:\Users\cosmi\Documents\Visual Studio 2017\Projects\YoutubeDownloader-GUI\YoutubeDownloader-GUI\obj\Debug\YoutubeDownloader_GUI.Properties.Resources.resources
+C:\Users\cosmi\Documents\Visual Studio 2017\Projects\YoutubeDownloader-GUI\YoutubeDownloader-GUI\obj\Debug\YoutubeDownloader-GUI.csproj.GenerateResource.Cache
+C:\Users\cosmi\Documents\Visual Studio 2017\Projects\YoutubeDownloader-GUI\YoutubeDownloader-GUI\obj\Debug\YoutubeDownloader-GUI.csproj.CoreCompileInputs.cache
+C:\Users\cosmi\Documents\Visual Studio 2017\Projects\YoutubeDownloader-GUI\YoutubeDownloader-GUI\obj\Debug\YoutubeDownloader-GUI.exe
+C:\Users\cosmi\Documents\Visual Studio 2017\Projects\YoutubeDownloader-GUI\YoutubeDownloader-GUI\obj\Debug\YoutubeDownloader-GUI.pdb
