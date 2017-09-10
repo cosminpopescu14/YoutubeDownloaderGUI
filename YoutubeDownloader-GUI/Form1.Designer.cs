@@ -34,6 +34,11 @@
             this.button1 = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.formatsComboBox = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.convertButton = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // textBox1
@@ -58,7 +63,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(265, 145);
+            this.button1.Location = new System.Drawing.Point(144, 187);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(229, 59);
             this.button1.TabIndex = 2;
@@ -80,17 +85,69 @@
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
             this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(447, 117);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(97, 17);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "showProgress";
+            // 
+            // formatsComboBox
+            // 
+            this.formatsComboBox.FormattingEnabled = true;
+            this.formatsComboBox.Location = new System.Drawing.Point(629, 57);
+            this.formatsComboBox.Name = "formatsComboBox";
+            this.formatsComboBox.Size = new System.Drawing.Size(121, 24);
+            this.formatsComboBox.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(629, 34);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(72, 17);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Convert in";
+            // 
+            // convertButton
+            // 
+            this.convertButton.Location = new System.Drawing.Point(629, 203);
+            this.convertButton.Name = "convertButton";
+            this.convertButton.Size = new System.Drawing.Size(133, 59);
+            this.convertButton.TabIndex = 7;
+            this.convertButton.Text = "Convert...";
+            this.convertButton.UseVisualStyleBackColor = true;
+            this.convertButton.Click += new System.EventHandler(this.convertButton_Click);
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.richTextBox1.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.richTextBox1.Location = new System.Drawing.Point(632, 309);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(710, 281);
+            this.richTextBox1.TabIndex = 8;
+            this.richTextBox1.Text = "";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(817, 253);
+            this.ClientSize = new System.Drawing.Size(1354, 602);
+            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.convertButton);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.formatsComboBox);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -104,6 +161,11 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox formatsComboBox;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button convertButton;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }
 
