@@ -39,7 +39,7 @@ namespace YoutubeDownloader_GUI
                 {
                     DownloadUrlResolver.DecryptDownloadUrl(video);
                 }
-                var videoDownloader = new VideoDownloader(video, Path.Combine(@"C:\Users\cosmi\Desktop\youtube", video.Title.Replace(" ", string.Empty).Replace("/", "") + video.VideoExtension));
+                var videoDownloader = new VideoDownloader(video, Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyVideos), video.Title.Replace(" ", string.Empty).Replace("/", "") + video.VideoExtension));
 
                 //report the progress for progressbar1
                 videoDownloader.DownloadProgressChanged += (y, x) => backgroundWorker1.ReportProgress((int)x.ProgressPercentage); 
@@ -77,6 +77,8 @@ namespace YoutubeDownloader_GUI
             }
         }
 
+   
+
         /*Uses ffmpeg for conversion*/
         public void Convert()
         {
@@ -108,7 +110,7 @@ namespace YoutubeDownloader_GUI
 
         private void convertButton_Click(object sender, EventArgs e)
         {
-            Convert();
+            Convert();           
         }
 
         private void Form1_Load(object sender, EventArgs e)
