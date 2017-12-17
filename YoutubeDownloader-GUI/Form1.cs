@@ -119,7 +119,7 @@ namespace YoutubeDownloader_GUI
             formatsComboBox.Items.Add(new Formats("MP3", "mp3"));
         }
 
-        private void SetSettings()
+        /*private void SetSettings()
         {
             
             foreach (string key in ConfigurationManager.AppSettings)
@@ -143,6 +143,12 @@ namespace YoutubeDownloader_GUI
                     MessageBox.Show("ffmpeg path already configured !");
                 }
             }
+        }*/
+
+        private void settingsButton_Click(object sender, EventArgs e)
+        {
+            SettingsForm settingsForm = new SettingsForm();
+            settingsForm.Show();
         }
     }
 }

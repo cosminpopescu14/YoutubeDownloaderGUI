@@ -13,3 +13,5 @@ C:\Users\cosmi\Documents\Visual Studio 2017\Projects\YoutubeDownloader-GUI\Youtu
 C:\Users\cosmi\Documents\Visual Studio 2017\Projects\YoutubeDownloader-GUI\YoutubeDownloader-GUI\obj\Debug\YoutubeDownloader-GUI.csproj.CoreCompileInputs.cache
 C:\Users\cosmi\Documents\Visual Studio 2017\Projects\YoutubeDownloader-GUI\YoutubeDownloader-GUI\obj\Debug\YoutubeDownloader-GUI.exe
 C:\Users\cosmi\Documents\Visual Studio 2017\Projects\YoutubeDownloader-GUI\YoutubeDownloader-GUI\obj\Debug\YoutubeDownloader-GUI.pdb
+C:\Users\cosmi\Documents\Visual Studio 2017\Projects\YoutubeDownloader-GUI\YoutubeDownloader-GUI\obj\Debug\YoutubeDownloader-GUI.csprojResolveAssemblyReference.cache
+C:\Users\cosmi\Documents\Visual Studio 2017\Projects\YoutubeDownloader-GUI\YoutubeDownloader-GUI\obj\Debug\YoutubeDownloader_GUI.SettingsForm.resources

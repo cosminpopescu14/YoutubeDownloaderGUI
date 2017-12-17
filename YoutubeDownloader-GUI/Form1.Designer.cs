@@ -39,6 +39,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.convertButton = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.settingsButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
@@ -130,11 +131,22 @@
             this.richTextBox1.TabIndex = 8;
             this.richTextBox1.Text = "";
             // 
+            // settingsButton
+            // 
+            this.settingsButton.Location = new System.Drawing.Point(59, 553);
+            this.settingsButton.Name = "settingsButton";
+            this.settingsButton.Size = new System.Drawing.Size(133, 23);
+            this.settingsButton.TabIndex = 9;
+            this.settingsButton.Text = "Settings";
+            this.settingsButton.UseVisualStyleBackColor = true;
+            this.settingsButton.Click += new System.EventHandler(this.settingsButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1354, 602);
+            this.Controls.Add(this.settingsButton);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.convertButton);
             this.Controls.Add(this.label3);
@@ -165,6 +177,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button convertButton;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Button settingsButton;
     }
 }
 
