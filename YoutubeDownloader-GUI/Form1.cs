@@ -13,7 +13,7 @@ using System.Configuration;
 namespace YoutubeDownloader_GUI
 {
     public partial class Form1 : Form
-    {
+    {       
         public Form1()
         {
             InitializeComponent();
@@ -32,14 +32,16 @@ namespace YoutubeDownloader_GUI
             {
                 string link = textBox1.Text;
                 IEnumerable<VideoInfo> videoInfo = DownloadUrlResolver.GetDownloadUrls(link);
-                VideoInfo video = videoInfo.FirstOrDefault();//we take the first video from that url.
-                //.First(info => info.VideoType == VideoType.Flash && info.Resolution == 480);
+                VideoInfo video = videoInfo.FirstOrDefault();//we take the first video from that url.               
 
                 if (video.RequiresDecryption)
                 {
                     DownloadUrlResolver.DecryptDownloadUrl(video);
                 }
-                var videoDownloader = new VideoDownloader(video, Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyVideos), video.Title.Replace(" ", string.Empty).Replace("/", "") + video.VideoExtension));
+                
+                //just a trick to allow method call in background worker control;
+                var videoDownloader = new VideoDownloader(video, Path.Combine(Invoke((Func< string>)(() => { return GetPath(""); })).ToString(),
+                                                            video.Title.Replace(" ", string.Empty).Replace("/", "") + video.VideoExtension));
 
                 //report the progress for progressbar1
                 videoDownloader.DownloadProgressChanged += (y, x) => backgroundWorker1.ReportProgress((int)x.ProgressPercentage); 
@@ -77,7 +79,15 @@ namespace YoutubeDownloader_GUI
             }
         }
 
-   
+        public Func<string, string> GetPath = delegate (string s)
+        {
+            FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
+            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+            {
+                return folderBrowserDialog.SelectedPath;
+            }
+            return "";
+        };
 
         /*Uses ffmpeg for conversion*/
         public void Convert()
@@ -85,8 +95,7 @@ namespace YoutubeDownloader_GUI
             string file = SelectFile();
             StringBuilder sb = new StringBuilder();
             Process process = new Process();
-            process.StartInfo.FileName = ConfigurationManager.AppSettings["ffmpegPath"];      //@"C:\Users\cosmi\Documents\Visual Studio 2017\Projects\YoutubeDownloader-GUI\YoutubeDownloader-GUI\bin\ffmpeg-20170904-6cadbb1-win32-static\bin\ffmpeg.exe";
-            process.StartInfo.Arguments = "-i" + " " + $"{file}" + " " + $"{file}.mp3";
+            process.StartInfo.FileName = ConfigurationManager.AppSettings["ffmpegPath"];      
             process.StartInfo.WindowStyle = ProcessWindowStyle.Maximized;
             process.StartInfo.RedirectStandardOutput = true;
             process.StartInfo.RedirectStandardError = true;
@@ -118,32 +127,6 @@ namespace YoutubeDownloader_GUI
             //formatsComboBox.Enabled = false;
             formatsComboBox.Items.Add(new Formats("MP3", "mp3"));
         }
-
-        /*private void SetSettings()
-        {
-            
-            foreach (string key in ConfigurationManager.AppSettings)
-            {
-                string value = ConfigurationManager.AppSettings[key];
-                if (value == "")
-                {
-                    MessageBox.Show("ffpeg path not configured !");
-                    openFileDialog1.Title = "Select ffmpeg executable file";
-                    if (openFileDialog1.ShowDialog() == DialogResult.OK)
-                    {
-                        string ffmpegPath = openFileDialog1.FileName;
-                        Configuration configuration = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-                        configuration.AppSettings.Settings.Add("ffmpegPath", Path.GetFullPath(ffmpegPath));
-                        configuration.Save(ConfigurationSaveMode.Modified);
-                        ConfigurationManager.RefreshSection("appSettings");
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("ffmpeg path already configured !");
-                }
-            }
-        }*/
 
         private void settingsButton_Click(object sender, EventArgs e)
         {
