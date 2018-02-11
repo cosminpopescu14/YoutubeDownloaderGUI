@@ -18,6 +18,15 @@ namespace YoutubeDownloader_GUI
         {
             InitializeComponent();
         }
+        public Func<string, string> GetPath = delegate (string s)
+        {
+            FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
+            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+            {
+                return folderBrowserDialog.SelectedPath;
+            }
+            return "";
+        };
 
         private  void button1_Click(object sender, EventArgs e)
         {
@@ -40,7 +49,7 @@ namespace YoutubeDownloader_GUI
                 }
                 
                 //just a trick to allow method call in background worker control;
-                var videoDownloader = new VideoDownloader(video, Path.Combine(Invoke((Func< string>)(() => { return GetPath(""); })).ToString(),
+                var videoDownloader = new VideoDownloader(video, Path.Combine(Invoke((Func<string>)(() => { return GetPath(""); })).ToString(),
                                                             video.Title.Replace(" ", string.Empty).Replace("/", "") + video.VideoExtension));
 
                 //report the progress for progressbar1
@@ -79,15 +88,7 @@ namespace YoutubeDownloader_GUI
             }
         }
 
-        public Func<string, string> GetPath = delegate (string s)
-        {
-            FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
-            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
-            {
-                return folderBrowserDialog.SelectedPath;
-            }
-            return "";
-        };
+
 
         /*Uses ffmpeg for conversion*/
         public void Convert()
@@ -95,7 +96,8 @@ namespace YoutubeDownloader_GUI
             string file = SelectFile();
             StringBuilder sb = new StringBuilder();
             Process process = new Process();
-            process.StartInfo.FileName = ConfigurationManager.AppSettings["ffmpegPath"];      
+            process.StartInfo.FileName = ConfigurationManager.AppSettings["ffmpegPath"];
+            process.StartInfo.Arguments = "-i" + " " + $"{file}" + " " + $"{file}.mp3";
             process.StartInfo.WindowStyle = ProcessWindowStyle.Maximized;
             process.StartInfo.RedirectStandardOutput = true;
             process.StartInfo.RedirectStandardError = true;
